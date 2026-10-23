@@ -1,0 +1,10 @@
+{
+  "name": "phikeyhole369",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local-first, deny-by-default human approval broker for AI agent capability requests (no passwords)",
+  "engines": {"node": ">=20"},
+  "scripts": {"start": "node src/server.mjs", "test": "node --test tests/*.test.mjs"},
+  "license": "MIT"
+}

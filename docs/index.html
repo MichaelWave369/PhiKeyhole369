@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ΦKeyhole369 | Sovereign Access</title>
+<style>
+:root{color-scheme:dark;font-family:ui-sans-serif,system-ui;background:#060c14;color:#e6f5ff}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 60% -15%,#1d3950 0%,#060c14 65%);min-height:100vh}.wrap{max-width:1100px;margin:auto;padding:32px 24px}.top{display:flex;justify-content:space-between;gap:12px;align-items:center;border-bottom:1px solid #254052;padding-bottom:18px;font-size:14px;letter-spacing:.15em}.logo{font-weight:800;font-size:22px}.logo i{color:#76ebcc;font-style:normal}.tag{border:1px solid #31786b;border-radius:50px;padding:9px 12px;font-size:10px;color:#76ebcc}h1{font-size:clamp(40px,7vw,76px);letter-spacing:-.07em;line-height:1.04;margin:68px 0 20px}h1 span{color:#76ebcc}.intro{color:#99b4c4;max-width:660px;line-height:1.7;font-size:17px}.row{display:grid;grid-template-columns:1.1fr 1fr;gap:18px;margin-top:40px}.panel{border:1px solid #2a4657;border-radius:18px;background:#101c2b;padding:25px;min-width:0}.eyebrow{color:#76ebcc;letter-spacing:.2em;font-size:11px;font-weight:700}.card{padding:20px;background:#0b1724;border:1px solid #263d4c;border-radius:12px;margin:18px 0}.meta{font-size:11px;color:#779aaa;letter-spacing:.12em}.target{font-size:20px;font-weight:750;margin:8px 0}.reason{color:#a3bac9;line-height:1.5;font-size:14px}.buttons{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}button{border:0;background:#77ebcf;color:#09201f;padding:12px 16px;border-radius:9px;font-weight:800;cursor:pointer}button.alt{background:#283e50;color:#dce8ef}button:disabled{opacity:.4;cursor:default}.status{color:#75ead0;font-size:12px;letter-spacing:.15em}.timeline{min-height:180px}.entry{border-bottom:1px solid #264052;padding:10px 0;font-size:12px;color:#a9c5d2}.muted{color:#849fac;font-size:13px;line-height:1.6}.note{border-left:3px solid #70e7c8;padding-left:15px;margin-top:30px;color:#99b4c2;line-height:1.5}a{color:#82f3d5}footer{margin:50px 0 10px;color:#6d899c;letter-spacing:.14em;font-size:11px}@media(max-width:720px){.row{grid-template-columns:1fr}.wrap{padding:20px}h1{margin-top:48px}}
+</style></head>
+<body><div class="wrap"><div class="top"><span class="logo">Φ KEYHOLE<i>369</i></span><span class="tag">R0.1 · SAFE SIMULATION</span></div>
+<h1>Access is earned.<br><span>Never assumed.</span></h1>
+<p class="intro">A sovereign approval gateway for a world of AI agents. A model can suggest an action, but a human decides whether the action deserves authority.</p>
+<div class="row"><section class="panel"><p class="eyebrow">01 / SIMULATED REQUEST</p><p class="muted">This static Pages demo uses fictional data. It does not connect to accounts, passwords, or the local broker.</p>
+<div class="card"><div class="meta">REQUESTED BY · VESSIE / SUPER Φ.VESSEL</div><div class="target">Read repository metadata</div><div class="reason">Resource: MichaelWave369/PhiKeyhole369</div><div class="reason">Reason: Inspect repository details.</div></div>
+<div class="buttons"><button id="approve">Approve once</button><button id="deny" class="alt">Deny</button><button id="reset" class="alt">Reset demo</button></div>
+<div class="status" id="state" aria-live="polite">PENDING HUMAN REVIEW</div><p class="muted" id="detail">The fictional agent has no authority until you decide.</p></section>
+<section class="panel"><p class="eyebrow">02 / FICTIONAL AUDIT TRAIL</p><div class="timeline" id="timeline"><div class="entry">#1 REQUEST_CREATED · VESSIE · read:repo-metadata</div></div>
+<p class="muted">A real local prototype also implements an in-memory hash chain and short-lived one-use demo grants. None of this is an audited login service.</p></section></div>
+<p class="note">Capability ≠ Authority. This is a design demonstration, not a password manager. No real credentials are used or transmitted. <a href="https://github.com/MichaelWave369/PhiKeyhole369">View source &amp; local prototype</a>.</p>
+<footer>LEDGER ABOVE EGO · Φ369 RESEARCH LAB</footer></div>
+<script>
+const state=document.getElementById('state'), detail=document.getElementById('detail'),timeline=document.getElementById('timeline');let n=1,finished=false;
+function add(message){const item=document.createElement('div');item.className='entry';item.textContent='#'+(++n)+' '+message;timeline.append(item)}
+for(const action of ['approve','deny'])document.getElementById(action).addEventListener('click',()=>{
+  if(finished)return;finished=true;
+  state.textContent=action==='approve'?'APPROVED · DEMO GRANT (ONE USE)':'DENIED · NO GRANT';
+  detail.textContent=action==='approve'?'The local R0 broker would issue a one-time simulation token. It cannot log in to anything.':'No grant exists. The agent must stop.';
+  add(action==='approve'?'REQUEST_APPROVED · simulated grant issued':'REQUEST_DENIED · fail closed');
+  document.getElementById('approve').disabled=true;document.getElementById('deny').disabled=true;
+});
+document.getElementById('reset').addEventListener('click',()=>{
+  n=1;finished=false;state.textContent='PENDING HUMAN REVIEW';detail.textContent='The fictional agent has no authority until you decide.';
+  timeline.replaceChildren();const item=document.createElement('div');item.className='entry';item.textContent='#1 REQUEST_CREATED · VESSIE · read:repo-metadata';timeline.append(item);
+  document.getElementById('approve').disabled=false;document.getElementById('deny').disabled=false;
+});
+</script></body></html>
